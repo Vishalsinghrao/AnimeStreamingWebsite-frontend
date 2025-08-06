@@ -3,7 +3,6 @@ import CardSlider from '../components/CardSlider'
 import Smallcard from '../components/Smallcard'
 import { useEffect,useState } from 'react'
 import axios from 'axios'
-import config from '../components/config'
 
 
 
@@ -42,7 +41,7 @@ const Anime = () => {
   // ];
 
     useEffect(() => {
-    axios.get(`${config.API_URL}/api/anime`)
+    axios.get('http://localhost:4000/api/anime')
       .then(res => {
         const fetchedAnime = res.data.data.slice(0, 10); // Get top 10 anime
         const formatted = fetchedAnime.map(item => ({

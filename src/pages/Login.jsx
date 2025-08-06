@@ -5,7 +5,6 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import "./Login.css"
 import { useAuth } from '../components/AuthContext';
-import config from '../components/config';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -16,7 +15,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(`${config.API_URL}/login`, { email, password },{ withCredentials: true })
+    axios.post('http://localhost:4000/login', { email, password },{ withCredentials: true })
       .then(result => {
         console.log(result)
         if (result.data === "Success") {

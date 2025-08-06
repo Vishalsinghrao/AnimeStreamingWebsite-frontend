@@ -42,7 +42,7 @@ const Streaming = () => {
 
     <div className='player'>
 
-      <HiAnimePlayer className='react-player' controls src={`${config.API_URL}/video`} />
+      <HiAnimePlayer className='react-player' controls src='http://localhost:4000/video' />
       <h2>Related Anime</h2>
       <div className="related-cards" >
         {cards.map((card, index) => (

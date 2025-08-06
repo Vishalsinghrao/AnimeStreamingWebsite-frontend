@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import config from '../components/config';
 
 const Signup = () => {
     const [email, setEmail] = useState('');
@@ -13,7 +12,7 @@ const Signup = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(`${config.API_URL}/register`, { email, password })
+        axios.post('http://localhost:4000/register', { email, password })
             .then(result => {
                 console.log(result)
                 navigate('/login')

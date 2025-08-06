@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import "./ProtectedRoute.css"
 import Navbar from './Navbar';
-import config from './config';
 
 const ProtectedRoute = ({ children }) => {
     const [authChecked, setAuthChecked] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     useEffect(() => {
-        axios.get(`${config.API_URL}/check-auth`, { withCredentials: true })
+        axios.get('http://localhost:4000/check-auth', { withCredentials: true })
             .then(res => {
                 setIsAuthenticated(res.data.isLoggedIn);
                 setAuthChecked(true);
