@@ -2,7 +2,6 @@ import Smallcard from '../components/Smallcard';
 import './Streaming.css'
 import Footer from '../components/Footer';
 import HiAnimePlayer from '../components/HiAnimePlayer';
-import config from '../components/config';
 
 const Streaming = () => {
   const cards = [
